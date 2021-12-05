@@ -10,21 +10,37 @@ package com.ufrontera.java.Controller;
  *           Sepulveda Jose
  *           Fuica Morales Manuel
  */
-public class Main
-{
-    public static void main( String[] args )
-    {
+public class Main {
+    public static void main( String[] args ) {
         String hline = "---------------------------------";
+        System.out.println(hline);
+        printIntro();
+        System.out.println(hline);
+
+        App aplicacion = new App();
+
+        aplicacion.mostrarPalabras();
+        System.out.println(hline);
+
+
+        aplicacion.buscarPalabra();
+        System.out.println(hline);
+
+
+        aplicacion.agregarPalabras();
+        System.out.println(hline);
+
+
+        aplicacion.eliminarPalabra();
+        System.out.println(hline);
+
+
+        System.out.println(hline);
+        System.out.println("Fin.");
+    }
+
+    public static void printIntro(){
         System.out.println("Complejidad Computacional");
         System.out.println("Proyecto Final");
-        System.out.println(hline);
-        System.out.println(hline);
-
-        // Menu demo
-        System.out.println("Mostrar palabras");
-        System.out.println("Agregar palabra");
-        System.out.println("Buscar palabra");
-        System.out.println("Eliminar palabra");
-
     }
 }
