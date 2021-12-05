@@ -22,26 +22,9 @@ public class Main {
         printIntro();
         System.out.println(hline);
 
-        App aplicacion = new App();
+        Controller controller = new Controller();
+        controller.start();
 
-        aplicacion.mostrarPalabras();
-        System.out.println(hline);
-
-
-        aplicacion.buscarPalabra();
-        System.out.println(hline);
-
-
-        aplicacion.agregarPalabras();
-        System.out.println(hline);
-
-
-        aplicacion.eliminarPalabra();
-        System.out.println(hline);
-
-
-        System.out.println(hline);
-        System.out.println("Fin.");
     }
 
     public static void printIntro(){
