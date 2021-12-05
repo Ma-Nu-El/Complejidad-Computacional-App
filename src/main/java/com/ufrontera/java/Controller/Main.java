@@ -1,5 +1,7 @@
 package com.ufrontera.java.Controller;
 
+import com.ufrontera.java.Model.*;
+
 /**
  * apellido1-nombre1_apellido2-nombre2
  *
