@@ -25,7 +25,6 @@ public class App
         System.out.println("Agregar palabra");
         System.out.println("Buscar palabra");
         System.out.println("Eliminar palabra");
-        System.out.println("Mostrar palabras");
 
     }
 }
