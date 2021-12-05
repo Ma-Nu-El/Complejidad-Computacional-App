@@ -20,6 +20,7 @@ public class App
         System.out.println(hline);
         System.out.println(hline);
 
+        // Menu demo
         System.out.println("Mostrar palabras");
         System.out.println("Agregar palabra");
         System.out.println("Buscar palabra");
