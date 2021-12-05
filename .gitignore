@@ -1,0 +1,10 @@
+# Ignore IDE specific stuff
+# maven
+target/
+# netbeans
+build/
+build.xml
+manifest.mf
+nbproject/
+# intellij
+*.iml
