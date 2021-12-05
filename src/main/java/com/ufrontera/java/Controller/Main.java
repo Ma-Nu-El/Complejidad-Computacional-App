@@ -10,11 +10,11 @@ package com.ufrontera.java.Controller;
  *           Sepulveda Jose
  *           Fuica Morales Manuel
  */
-public class App 
+public class Main
 {
     public static void main( String[] args )
     {
-        String hline = "-------------------------------------------------------------------------------------------------------------------------------------";
+        String hline = "---------------------------------";
         System.out.println("Complejidad Computacional");
         System.out.println("Proyecto Final");
         System.out.println(hline);
