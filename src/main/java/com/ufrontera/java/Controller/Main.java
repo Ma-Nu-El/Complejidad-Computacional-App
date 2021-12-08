@@ -1,7 +1,5 @@
 package com.ufrontera.java.Controller;
 
-import com.ufrontera.java.Model.*;
-
 /**
  * Diccionario Interactivo
  * Complejidad Computacional
@@ -16,19 +14,18 @@ import com.ufrontera.java.Model.*;
  */
 
 public class Main {
-    public static void main( String[] args ) {
-        String hline = "---------------------------------";
-        System.out.println(hline);
-        printIntro();
-        System.out.println(hline);
+    public static void main(String[] args) {
+
+        Util utilities = new Util();
+
+        utilities.printHline();
+        utilities.printIntro();
+        utilities.printHline();
 
         Controller controller = new Controller();
         controller.start();
 
     }
 
-    public static void printIntro(){
-        System.out.println("Complejidad Computacional");
-        System.out.println("Proyecto Final");
-    }
+
 }
