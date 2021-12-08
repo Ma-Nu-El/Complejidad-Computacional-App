@@ -16,11 +16,11 @@ package com.ufrontera.java.Controller;
 public class Main {
     public static void main(String[] args) {
 
-        Util utilities = new Util();
+        ConsoleUtilities consoleUtilities = new ConsoleUtilities();
 
-        utilities.printHline();
-        utilities.printIntro();
-        utilities.printHline();
+        consoleUtilities.printHline();
+        consoleUtilities.printIntro();
+        consoleUtilities.printHline();
 
         Controller controller = new Controller();
         controller.start();

@@ -1,6 +1,6 @@
 package com.ufrontera.java.Controller;
 
-public class Util {
+public class ConsoleUtilities {
     private String hline = "---------------------------------";
 
     public void printHline(){
