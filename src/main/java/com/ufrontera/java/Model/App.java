@@ -60,7 +60,8 @@ public class App {
                          * output a un archivo.
                          */
 
-                        String filename = "output.txt";
+                        String fileExtension = ".txt";
+                        String filename = ("Diccionario"+fileExtension);
                         File newFile = new File(filename);
                         // FileWriter fileWriter = new FileWriter(newFile);
                         PrintStream ps = new PrintStream(newFile);
@@ -75,7 +76,7 @@ public class App {
                          * para el metodo 'write' del
                          * 'writer'.
                          * */
-                        palabras.ordenarYGuardar(ps);
+                        palabras.guardarDiccionario(ps);
 
                 } catch (Throwable e) {
                         System.out.println("Error " + e.getMessage());
