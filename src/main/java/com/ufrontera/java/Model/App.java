@@ -1,63 +1,85 @@
 package com.ufrontera.java.Model;
 
+import java.io.*;
+
 public class App {
 
         // Creamos el arbol donde se almacenaran las palabras
         Tree palabras = new Tree();
-        /*
-        IMPLICITAMENTE EL METODO MOSTRAR PALABRA ORDENA
-        */
-        public void mostrarPalabras() {
-                System.out.println("-Palabras agregadas al diccionario:");
-                palabras.ordenar();
-        }
+
+        // Crear importar de palabras
+        ListaDePalabras listaDePalabras = new ListaDePalabras();
+
+        // Crear diccionario
+        Diccionario diccionario = new Diccionario();
 
         public void agregarPalabras() {
 
-                /** Nótese que están desordenadas, luego el programa
-                 *  las ordena.
-                 * 
-                 * SE INVOCA EL METODO "AGREGAR" DE LA CLASE "PALABRA" 
-                 */
-                palabras.agregar("Saltar", "Elevarse del suelo u otra superficie con impulso para caer en el mismo lugar o en otro.", "Verbo");
-                palabras.agregar("Volar", "Moverse por el aire usando alas o un medio artificial.", "Verbo");
-                palabras.agregar("Caminar", "Andar de un lugar a otro usando las piernas", "Verbo");
-                palabras.agregar("Comer", "Tomar alimento por la boca", "Verbo");
-                palabras.agregar("Escribir", "Representar ideas, palabras, números o notas musicales mediante letras u otros signos gráficos.", "Verbo");
-                palabras.agregar("Nacer", "Salir del vientre de la madre (o huevo).", "Verbo");
-                palabras.agregar("Aplaudir", "Chocar repetidamente las palmas de las manos", "Verbo");
-                palabras.agregar("Nadar", "Avanzar en el agua [una persona o un animal] haciendo los movimientos con las manos", "Verbo");
-                palabras.agregar("Decir", "Articular, pronunciar o emitir los sonidos de una lengua.", "Verbo");
-                palabras.agregar("Jugar", "Realizar una actividad o hacer una cosa, generalmente ejercitando alguna capacidad o destreza", "Verbo");
-                palabras.agregar("Cantar", "Producir sonidos armoniosos o emitir su voz", "Verbo");
-                palabras.agregar("Zarpar", "Trabajar con la zapa", "Verbo");
-                palabras.agregar("Correr", "Desplazarse rápidamente", "Verbo");
+                String[][] lista = listaDePalabras.getLista();
+
+                for (int i = 0; i < lista.length; i++) {
+                        palabras.agregar(lista[i][0], lista[i][1], lista[i][2]);
+                }
         }
 
-        /*
-        SE INVOCA EL METODO "FIND" DE LA CLASE "PALABRA"
-        Y ADEMÁS MUESTRA LA PALABRA CON EL MÉTODO "MOSTRAR PALABRA"
-        */
+        public void mostrarPalabras() {
+                // System.out.println("-Palabras agregadas al diccionario:");
+                // palabras.ordenar();
+                listaDePalabras.printLista();
+        }
+
+        // public void ordenarPalabras() {
+        //         System.out.println("Palabras ordenadas:");
+        //         palabras.ordenar();
+        // }
+
         public void buscarPalabra() {
                 String palabraBuscada = "Saltar";
                 System.out.println("-Palabra buscada: " + palabraBuscada);
-                palabras.find(palabraBuscada).mostrarPalabra();
+                palabras.find(palabraBuscada).mostrarNombre();
         }
 
-        /*
-        SE INVOCA EL METODO "ELIMINAR" DE LA CLASE "PALABRA"
-        */
         public void eliminarPalabra() {
                 String palabraAEliminar = "Saltar";
                 System.out.println("-Eliminar palabra: " + palabraAEliminar);
                 palabras.eliminar(palabraAEliminar);
         }
 
-        /*
-        SE INVOCA EL METODO "ORDENAR" DE LA CLASE "PALABRA"
-        */
-        public void ordenarPalabras() {
-                System.out.println("-Ordenar:");
-                palabras.ordenar();
+        // Guardar output de 'palabras.ordenar()' a
+        // un 'diccionario.txt'
+        public void guardarDiccionario() {
+
+                // 'palabras.ordenar' es un metodo
+                // 'void' que imprime a consola;
+                // queremos guardar ese output a un
+                // archivo.
+
+                try {
+                        /**
+                         * Dependencias para escribir
+                         * output a un archivo.
+                         */
+
+                        String filename = "output.txt";
+                        File newFile = new File(filename);
+                        // FileWriter fileWriter = new FileWriter(newFile);
+                        PrintStream ps = new PrintStream(newFile);
+
+                        // BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                        // PrintWriter writer = new PrintWriter(bufferedWriter);
+
+                        /**
+                         * El metodo 'palabras.ordenar()'
+                         * es tipo 'void'; por lo tanto
+                         * no es admitido como parametro
+                         * para el metodo 'write' del
+                         * 'writer'.
+                         * */
+                        palabras.ordenarYGuardar(ps);
+
+                } catch (Throwable e) {
+                        System.out.println("Error " + e.getMessage());
+                        e.printStackTrace();
+                }
         }
 }

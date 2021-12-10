@@ -7,29 +7,39 @@ public class Controller {
 
     public void start(){
 
-        Util utilities = new Util();
+        ConsoleUtilities consoleUtilities = new ConsoleUtilities();
 
         App app = new App();
 
-        /*EN ESTE CÓDIGO INVOCAMOS EL METODO AGREGAR PALABRA*/
+        // agregar palabras al diccionario
         app.agregarPalabras();
-        utilities.printHline();
+        consoleUtilities.printHline();
 
-         /*EN ESTE CÓDIGO INVOCAMOS EL METODO MOSTRAR PALABRA*/
+        // mostrar las palabras tal como se introducen
+        System.out.println("Palabras DESordenadas");
         app.mostrarPalabras();
-        utilities.printHline();
+        consoleUtilities.printHline();
 
-         /*EN ESTE CÓDIGO INVOCAMOS EL METODO BUSCAR PALABRA*/
+        // mostrar por pantalla las palabras ordenadas
+        // app.ordenarPalabras();
+        // consoleUtilities.printHline();
+
+        // mostrar las palabras tal como se introducen
+        // System.out.println("palabras Ordenadas");
+        app.mostrarPalabras();
+        consoleUtilities.printHline();
+
         app.buscarPalabra();
-        utilities.printHline();
+        consoleUtilities.printHline();
 
-         /*EN ESTE CÓDIGO INVOCAMOS EL METODO ELIMINAR PALABRA*/
         app.eliminarPalabra();
-        utilities.printHline();
+        consoleUtilities.printHline();
 
-         /*EN ESTE CÓDIGO INVOCAMOS EL METODO MOSTRAR PALABRA*/
         app.mostrarPalabras();
-        utilities.printHline();
+        consoleUtilities.printHline();
+
+        // guardar arbol ordenado a .txt
+        app.guardarDiccionario();
 
     }
 

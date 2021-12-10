@@ -1,5 +1,7 @@
 package com.ufrontera.java.Model;
 
+import java.io.PrintStream;
+
 public class Tree {
     // Primer nodo del arbol
     private Node root;
@@ -23,13 +25,24 @@ public class Tree {
         return successor;
     } // Fin getSuccessor()
 
-    private void inOrder(Node node) {
+    // private String[][] inOrder(Node node) {
+    private void inOrder(Node node, PrintStream ps) {
+
         if (node == null) {
             return;
         }
-        inOrder(node.hijoIzquierdo);
-        node.getPalabra().mostrarPalabra();
-        inOrder(node.hijoDerecho);
+
+        inOrder(node.hijoIzquierdo, ps);
+
+        ps.println(node.getPalabra().getNombre());
+        ps.println(node.getPalabra().getSignificado());
+        ps.println(node.getPalabra().getClasificacion());
+        // node.getPalabra().mostrarNombre();
+        // node.getPalabra().mostrarSignificado();
+        // node.getPalabra().mostrarClasificacion();
+
+        inOrder(node.hijoDerecho, ps);
+
     } // Fin inOrder()
 
     // Constructor
@@ -155,8 +168,12 @@ public class Tree {
         return true; 
     } // Fin eliminar()
 
-    public void ordenar() {
-        inOrder(this.root);
+    // public void ordenar() {
+    //     inOrder(this.root);
+    // } // Fin ordenar()
+
+    public void ordenarYGuardar(PrintStream ps) {
+        inOrder(this.root, ps);
     } // Fin ordenar()
 
     /*

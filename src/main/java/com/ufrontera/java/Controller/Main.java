@@ -1,16 +1,15 @@
 package com.ufrontera.java.Controller;
 
 /**
- * Diccionario Interactivo
- * Complejidad Computacional
- * Universidad de La Frontera
+ * Diccionario Interactivo Complejidad Computacional Universidad de La Frontera
  *
- * [2021-12-04 Sat]
- * Authores: godoi-misael_hijerra-camilo_sepulveda-jose_fuica-morales-manuel
- *           Godoi Misael
- *           Hijerra Camilo
- *           Sepulveda Jose
- *           Fuica Morales Manuel
+ * [2021-12-04 Sat] Autores:
+ * godoi-misael_hijerra-camilo_sepulveda-jose_fuica-morales-manuel Godoi Misael
+ *
+ * Godoi Misael
+ * Hijerra Camilo
+ * Sepulveda Jose
+ * Fuica Morales Manuel
  */
 
 public class Main {
@@ -26,5 +25,4 @@ public class Main {
         controller.start();
 
     }
-
 }
