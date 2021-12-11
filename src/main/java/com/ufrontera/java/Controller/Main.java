@@ -17,12 +17,6 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
-        ConsoleUtilities consoleUtilities = new ConsoleUtilities();
-
-        consoleUtilities.printHline();
-        consoleUtilities.printIntro();
-        consoleUtilities.printHline();
-
         Controller controller = new Controller();
         controller.start();
 

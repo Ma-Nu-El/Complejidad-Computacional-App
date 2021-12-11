@@ -9,17 +9,26 @@ public class Controller {
 
     public void start() throws FileNotFoundException{
 
-        ConsoleUtilities consoleUtilities = new ConsoleUtilities();
+        ConsoleUtilities console = new ConsoleUtilities();
+        // Saludo inicial
+        console.initConsole();
+        console.printIntro();
 
+        // Menu
         App app = new App();
+
+        app.printMenu();
+
+        // Preguntar por posicion de archivo a importar
+        // app.preguntarDirectorio();
 
         // Agregar palabras al diccionario desde la app misma
         // app.agregarPalabras();
         // consoleUtilities.printHline();
 
         // Importar archivo con palabras
-        app.importarArchivo();
-        consoleUtilities.printHline();
+        // app.importarArchivo();
+        // consoleUtilities.printHline();
 
         // Mostrar las palabras tal como se insertaron
         // System.out.println("Palabras DESordenadas");
@@ -27,8 +36,8 @@ public class Controller {
         // consoleUtilities.printHline();
 
         // mostrar por pantalla las palabras ordenadas
-        app.mostrarPalabrasOrdenadas();
-        consoleUtilities.printHline();
+        // app.mostrarPalabrasOrdenadas();
+        // consoleUtilities.printHline();
 
         // app.buscarPalabra();
         // consoleUtilities.printHline();
@@ -37,7 +46,13 @@ public class Controller {
         // consoleUtilities.printHline();
 
         // guardar arbol ordenado a .txt
-        app.exportarDiccionario();
+        // app.exportarDiccionario();
+
+
+        // Utilizar pilas y colas para reordenar
+        // diccionario alfabeticamente al derecho
+        // y al reves.
+
 
     }
 

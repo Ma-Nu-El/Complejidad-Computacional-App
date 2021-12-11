@@ -1,13 +1,14 @@
 package com.ufrontera.java.Model;
 
 import java.io.*;
+import com.ufrontera.java.Model.Menu.*;
 
 public class App {
 
         // Creamos el arbol donde se almacenaran las palabras
         Tree palabras = new Tree();
 
-        // Crear importar de palabras
+        // Lista de palabras pre-codificada
         ListaDePalabras listaDePalabras = new ListaDePalabras();
 
         // Crear diccionario
@@ -19,7 +20,15 @@ public class App {
         String outputFile = (outputFileName + outputFileExtension);
         File newFile = new File(outputFile);
 
+        // Dependencias Menu
+        Menu menu = new Menu();
+
         // Acciones de la app
+
+        public void printMenu() {
+                menu.displayMenu();
+        }
+
         public void agregarPalabras() {
 
                 try {
@@ -81,7 +90,9 @@ public class App {
 
         // Importar archivo
         public void importarArchivo() throws FileNotFoundException {
-                String inputFilePath = "/home/ma/myDrive/java-projects/Complejidad-Computacional-App/inputFile.txt";
+                // String inputFilePath =
+                // "/home/ma/myDrive/java-projects/Complejidad-Computacional-App/inputFile.txt";
+                String inputFilePath = "inputFile.txt";
                 File archivo = new File(inputFilePath);
                 // InputFile inputFile = new InputFile();
                 // inputFile.importFile(archivo);
