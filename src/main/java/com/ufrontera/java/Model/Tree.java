@@ -25,7 +25,24 @@ public class Tree {
         return successor;
     } // Fin getSuccessor()
 
-    // private String[][] inOrder(Node node) {
+
+    // Imprimir palabras por pantalla.
+    private void inOrder(Node node){
+
+        if (node == null) {
+            return;
+        }
+
+        inOrder(node.hijoIzquierdo);
+
+        node.getPalabra().mostrarNombre();
+        node.getPalabra().mostrarSignificado();
+        node.getPalabra().mostrarClasificacion();
+
+        inOrder(node.hijoDerecho);
+    }
+
+    // Guardar palabras a diccionario.
     private void inOrder(Node node, PrintStream ps) {
 
         if (node == null) {
@@ -37,12 +54,8 @@ public class Tree {
         ps.println(node.getPalabra().getNombre());
         ps.println(node.getPalabra().getSignificado());
         ps.println(node.getPalabra().getClasificacion());
-        // node.getPalabra().mostrarNombre();
-        // node.getPalabra().mostrarSignificado();
-        // node.getPalabra().mostrarClasificacion();
 
         inOrder(node.hijoDerecho, ps);
-
     } // Fin inOrder()
 
     // Constructor
@@ -168,11 +181,13 @@ public class Tree {
         return true; 
     } // Fin eliminar()
 
-    // public void ordenar() {
-    //     inOrder(this.root);
-    // } // Fin ordenar()
+    // Mostrar palabras ordenadas por consola
+    public void mostrar() {
+        inOrder(this.root);
+    } // Fin ordenar()
 
-    public void ordenarYGuardar(PrintStream ps) {
+    // Guardar diccionario con palabras ordenadas
+    public void guardarDiccionario(PrintStream ps) {
         inOrder(this.root, ps);
     } // Fin ordenar()
 

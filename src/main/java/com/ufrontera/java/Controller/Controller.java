@@ -1,45 +1,43 @@
 package com.ufrontera.java.Controller;
 
+import java.io.FileNotFoundException;
+
 import com.ufrontera.java.Model.*;
 
 public class Controller {
 
 
-    public void start(){
+    public void start() throws FileNotFoundException{
 
         ConsoleUtilities consoleUtilities = new ConsoleUtilities();
 
         App app = new App();
 
-        // agregar palabras al diccionario
-        app.agregarPalabras();
-        consoleUtilities.printHline();
-
-        // mostrar las palabras tal como se introducen
-        System.out.println("Palabras DESordenadas");
-        app.mostrarPalabras();
-        consoleUtilities.printHline();
-
-        // mostrar por pantalla las palabras ordenadas
-        // app.ordenarPalabras();
+        // Agregar palabras al diccionario desde la app misma
+        // app.agregarPalabras();
         // consoleUtilities.printHline();
 
-        // mostrar las palabras tal como se introducen
-        // System.out.println("palabras Ordenadas");
-        app.mostrarPalabras();
+        // Importar archivo con palabras
+        app.importarArchivo();
         consoleUtilities.printHline();
 
-        app.buscarPalabra();
+        // Mostrar las palabras tal como se insertaron
+        // System.out.println("Palabras DESordenadas");
+        // app.mostrarPalabras();
+        // consoleUtilities.printHline();
+
+        // mostrar por pantalla las palabras ordenadas
+        app.mostrarPalabrasOrdenadas();
         consoleUtilities.printHline();
 
-        app.eliminarPalabra();
-        consoleUtilities.printHline();
+        // app.buscarPalabra();
+        // consoleUtilities.printHline();
 
-        app.mostrarPalabras();
-        consoleUtilities.printHline();
+        // app.eliminarPalabra();
+        // consoleUtilities.printHline();
 
         // guardar arbol ordenado a .txt
-        app.guardarDiccionario();
+        app.exportarDiccionario();
 
     }
 

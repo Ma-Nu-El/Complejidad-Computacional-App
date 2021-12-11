@@ -13,25 +13,39 @@ public class App {
         // Crear diccionario
         Diccionario diccionario = new Diccionario();
 
+        // Dependencias outputFile
+        String outputFileExtension = ".txt";
+        String outputFileName = "Diccionario";
+        String outputFile = (outputFileName + outputFileExtension);
+        File newFile = new File(outputFile);
+
+        // Acciones de la app
         public void agregarPalabras() {
 
-                String[][] lista = listaDePalabras.getLista();
+                try {
+                        String[][] lista = listaDePalabras.getLista();
 
-                for (int i = 0; i < lista.length; i++) {
-                        palabras.agregar(lista[i][0], lista[i][1], lista[i][2]);
+                        for (int i = 0; i < lista.length; i++) {
+                                palabras.agregar(lista[i][0], lista[i][1], lista[i][2]);
+                        }
+
+                        String addedWordsMessage = "Palabras leidas desde el codigo.";
+                        System.out.println(addedWordsMessage);
+
+                } catch (Throwable e) {
+                        System.out.println("Error " + e.getMessage());
+                        e.printStackTrace();
                 }
         }
 
         public void mostrarPalabras() {
-                // System.out.println("-Palabras agregadas al diccionario:");
-                // palabras.ordenar();
                 listaDePalabras.printLista();
         }
 
-        // public void ordenarPalabras() {
-        //         System.out.println("Palabras ordenadas:");
-        //         palabras.ordenar();
-        // }
+        public void mostrarPalabrasOrdenadas() {
+                System.out.println("Palabras ordenadas:");
+                palabras.mostrar();
+        }
 
         public void buscarPalabra() {
                 String palabraBuscada = "Saltar";
@@ -47,39 +61,58 @@ public class App {
 
         // Guardar output de 'palabras.ordenar()' a
         // un 'diccionario.txt'
-        public void guardarDiccionario() {
+        public void exportarDiccionario() {
 
-                // 'palabras.ordenar' es un metodo
-                // 'void' que imprime a consola;
-                // queremos guardar ese output a un
-                // archivo.
+                String fileSavedMessage = "Diccionario guardado en: ";
 
                 try {
-                        /**
-                         * Dependencias para escribir
-                         * output a un archivo.
-                         */
-
-                        String fileExtension = ".txt";
-                        String filename = ("Diccionario"+fileExtension);
-                        File newFile = new File(filename);
-                        // FileWriter fileWriter = new FileWriter(newFile);
                         PrintStream ps = new PrintStream(newFile);
-
-                        // BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                        // PrintWriter writer = new PrintWriter(bufferedWriter);
-
-                        /**
-                         * El metodo 'palabras.ordenar()'
-                         * es tipo 'void'; por lo tanto
-                         * no es admitido como parametro
-                         * para el metodo 'write' del
-                         * 'writer'.
-                         * */
                         palabras.guardarDiccionario(ps);
+
+                        // Avisar que el diccionario se
+                        // guarda exitosamente.
+                        System.out.println(fileSavedMessage + outputFile);
 
                 } catch (Throwable e) {
                         System.out.println("Error " + e.getMessage());
+                        e.printStackTrace();
+                }
+        }
+
+        // Importar archivo
+        public void importarArchivo() throws FileNotFoundException {
+                String inputFilePath = "/home/ma/myDrive/java-projects/Complejidad-Computacional-App/inputFile.txt";
+                File archivo = new File(inputFilePath);
+                // InputFile inputFile = new InputFile();
+                // inputFile.importFile(archivo);
+
+                // https://www.w3schools.com/java/java_files_read.asp
+                // https://stackoverflow.com/questions/5868369/how-can-i-read-a-large-text-file-line-by-line-using-java
+
+                try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                        System.out.println("Leyendo...");
+                        while (br.ready()) {
+
+                                String nombre;
+                                String significado;
+                                String clasificacion;
+
+                                nombre = br.readLine();
+                                significado = br.readLine();
+                                clasificacion = br.readLine();
+
+                                // System.out.println(nombre + " " + significado + " " + clasificacion + ".");
+                                palabras.agregar(nombre, significado, clasificacion);
+                        } // end while
+                        String importedFileMessage = "Archivo importado.";
+                        System.out.println(importedFileMessage);
+                        br.close();
+                } // end try
+                catch (FileNotFoundException e) {
+                        String errmsg = "Error.";
+                        System.out.println(errmsg);
+                        e.printStackTrace();
+                } catch (IOException e) {
                         e.printStackTrace();
                 }
         }

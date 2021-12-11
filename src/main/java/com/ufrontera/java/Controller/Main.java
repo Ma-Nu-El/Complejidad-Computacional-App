@@ -1,5 +1,7 @@
 package com.ufrontera.java.Controller;
 
+import java.io.FileNotFoundException;
+
 /**
  * Diccionario Interactivo Complejidad Computacional Universidad de La Frontera
  *
@@ -13,7 +15,7 @@ package com.ufrontera.java.Controller;
  */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         ConsoleUtilities consoleUtilities = new ConsoleUtilities();
 
