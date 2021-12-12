@@ -14,46 +14,50 @@ public class Controller {
         // Saludo inicial
         console.initConsole();
         console.printIntro();
+        // consoleUtilities.printHline();
 
         // Menu
         App app = new App();
 
         // app.printMenu();
 
-        // Preguntar por posicion de archivo a importar
-        // app.preguntarDirectorio();
-
-        // Agregar palabras al diccionario desde la app misma
-        // app.agregarPalabras();
-        // consoleUtilities.printHline();
+        // Acciones del menu
+        // -------------------------------------------------
+        // Importar
+        // Exportar
+        // Mostrar
+        // Agregar
+        // Eliminar
+        // Buscar
 
         // Importar archivo con palabras
         app.importarArchivo();
-        // consoleUtilities.printHline();
 
-        // Mostrar las palabras tal como se insertaron
-        // System.out.println("Palabras DESordenadas");
-        // app.mostrarPalabras();
-        // consoleUtilities.printHline();
-
-        // mostrar por pantalla las palabras ordenadas
-        app.mostrarPalabrasOrdenadas();
-        // consoleUtilities.printHline();
-
-        // app.buscarPalabra();
-        // consoleUtilities.printHline();
-
-        // app.eliminarPalabra();
-        // consoleUtilities.printHline();
-
-        // guardar arbol ordenado a .txt
+        // Exportar arbol ordenado a una lista
         app.exportarDiccionario();
 
+        // Mostrar por pantalla
+        // app.mostrarPalabrasOrdenadas();
 
+        // Agregar palabras al diccionario desde la app
+        // app.agregarPalabras();
+
+        // app.eliminarPalabra();
+
+        // app.buscarPalabra();
+
+
+        // -------------------------------------------------
+        // MAYBE:
         // Utilizar pilas y colas para reordenar
         // diccionario alfabeticamente al derecho
         // y al reves.
 
+        // DEBUG:
+        // Mostrar las palabras tal como se insertaron
+        // System.out.println("Palabras DESordenadas");
+        // app.mostrarPalabras();
+        // consoleUtilities.printHline();
 
     }
 
