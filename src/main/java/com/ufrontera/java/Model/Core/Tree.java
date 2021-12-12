@@ -1,4 +1,4 @@
-package com.ufrontera.java.Model;
+package com.ufrontera.java.Model.Core;
 
 import java.io.PrintStream;
 

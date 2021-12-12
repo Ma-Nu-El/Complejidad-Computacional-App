@@ -1,36 +1,50 @@
-package com.ufrontera.java.Controller;
+package com.ufrontera.java.Model.ConsoleUtilities;
+
+import com.ufrontera.java.Model.Menu.*;
 
 public class ConsoleUtilities {
 
-    private int spacesPerTab = 8;
-    // private String tab = "";
+    private int spacesPerTab = 4;
     private String space = " ";
+    private String tab = "";
 
     // Create elements of console
-    public String createTab() {
+    private void createTab() {
         String tab="";
         for (int i = 0; i < spacesPerTab; i++) {
             tab = tab + space;
         }
-        return tab;
+        this.tab=tab;
+    }
+
+    public String getTab(){
+        return this.tab;
+    }
+
+    public String getTab(int numberOfTabs){
+        String outputTab = "";
+        for (int i = 0; i < numberOfTabs; i++) {
+            outputTab=outputTab+this.tab;
+        }
+        return outputTab;
     }
 
     public String getTitleIndent() {
-        int titleIndentLevel = 2;
+        int titleIndentLevel = 4;
         String titleIndent = "";
 
         for (int i = 0; i < titleIndentLevel; i++) {
-            titleIndent = titleIndent + createTab();
+            titleIndent = titleIndent + getTab();
         }
         return titleIndent;
     }
 
     public String getSubTitleIndent() {
-        int subtitleIndentLevel = 3;
+        int subtitleIndentLevel = 6;
         String subTitleIndent = "";
 
         for (int i = 0; i < subtitleIndentLevel; i++) {
-            subTitleIndent = subTitleIndent + createTab();
+            subTitleIndent = subTitleIndent + getTab();
         }
         return subTitleIndent;
     }
@@ -54,9 +68,18 @@ public class ConsoleUtilities {
 
     public void printIntro() {
         printHline();
-        System.out.println(getTitleIndent()+ "Complejidad Computacional");
-        System.out.println(getSubTitleIndent()+ "Proyecto Final");
+        String subjectMessage = "Complejidad Computacional";
+        String projectMessage = "Proyecto Final";
+        System.out.println(getTitleIndent()+ subjectMessage);
+        System.out.println(getSubTitleIndent()+ projectMessage);
         printHline();
+    }
+    public void printMenu(){
+        Menu menu = new Menu();
+        int menuIndentation = 2;
+
+        menu.displayMenu(getTab(menuIndentation));
+
     }
 
     public void initConsole(){

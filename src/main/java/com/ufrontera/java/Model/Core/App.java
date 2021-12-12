@@ -1,7 +1,10 @@
-package com.ufrontera.java.Model;
+package com.ufrontera.java.Model.Core;
 
 import java.io.*;
-import com.ufrontera.java.Model.Menu.*;
+
+import com.ufrontera.java.Model.*;
+import com.ufrontera.java.Model.ConsoleUtilities.ConsoleUtilities;
+import com.ufrontera.java.Model.Menu.Menu;
 
 public class App {
 
@@ -26,7 +29,8 @@ public class App {
         // Acciones de la app
 
         public void printMenu() {
-                menu.displayMenu();
+                ConsoleUtilities console = new ConsoleUtilities();
+                console.printMenu();
         }
 
         public void agregarPalabras() {
@@ -101,7 +105,7 @@ public class App {
                 // https://stackoverflow.com/questions/5868369/how-can-i-read-a-large-text-file-line-by-line-using-java
 
                 try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-                        System.out.println("Leyendo...");
+                        System.out.println("Leyendo " + inputFilePath);
                         while (br.ready()) {
 
                                 String nombre;

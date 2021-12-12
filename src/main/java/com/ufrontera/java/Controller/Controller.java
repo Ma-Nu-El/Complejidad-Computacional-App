@@ -2,7 +2,8 @@ package com.ufrontera.java.Controller;
 
 import java.io.FileNotFoundException;
 
-import com.ufrontera.java.Model.*;
+import com.ufrontera.java.Model.ConsoleUtilities.*;
+import com.ufrontera.java.Model.Core.*;
 
 public class Controller {
 
@@ -17,7 +18,7 @@ public class Controller {
         // Menu
         App app = new App();
 
-        app.printMenu();
+        // app.printMenu();
 
         // Preguntar por posicion de archivo a importar
         // app.preguntarDirectorio();
@@ -27,7 +28,7 @@ public class Controller {
         // consoleUtilities.printHline();
 
         // Importar archivo con palabras
-        // app.importarArchivo();
+        app.importarArchivo();
         // consoleUtilities.printHline();
 
         // Mostrar las palabras tal como se insertaron
@@ -36,7 +37,7 @@ public class Controller {
         // consoleUtilities.printHline();
 
         // mostrar por pantalla las palabras ordenadas
-        // app.mostrarPalabrasOrdenadas();
+        app.mostrarPalabrasOrdenadas();
         // consoleUtilities.printHline();
 
         // app.buscarPalabra();
@@ -46,7 +47,7 @@ public class Controller {
         // consoleUtilities.printHline();
 
         // guardar arbol ordenado a .txt
-        // app.exportarDiccionario();
+        app.exportarDiccionario();
 
 
         // Utilizar pilas y colas para reordenar
