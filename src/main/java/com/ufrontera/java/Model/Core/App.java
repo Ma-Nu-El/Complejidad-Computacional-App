@@ -2,7 +2,6 @@ package com.ufrontera.java.Model.Core;
 
 import java.io.*;
 
-import com.ufrontera.java.Model.*;
 import com.ufrontera.java.Model.ConsoleUtilities.ConsoleUtilities;
 import com.ufrontera.java.Model.Menu.Menu;
 
@@ -56,7 +55,7 @@ public class App {
         }
 
         public void mostrarPalabrasOrdenadas() {
-                System.out.println("Palabras ordenadas:");
+                System.out.println("Mostrar palabras:");
                 palabras.mostrar();
         }
 
@@ -67,10 +66,12 @@ public class App {
         }
 
         public void eliminarPalabra() {
-                String palabraAEliminar = "Saltar";
-                System.out.println("-Eliminar palabra: " + palabraAEliminar);
-                palabras.eliminar(palabraAEliminar);
+                String palabra = "Saltar";
+                System.out.println("Eliminando:" + palabra);
+                palabras.eliminar(palabra);
+                System.out.println(palabra + " eliminada.");
         }
+
 
         // Guardar output de 'palabras.ordenar()' a
         // un 'diccionario.txt'
