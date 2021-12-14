@@ -7,58 +7,58 @@ import com.ufrontera.java.Model.Core.*;
 
 public class Controller {
 
+        public App app = new App();
 
-    public void start() throws FileNotFoundException{
+        public void start() throws FileNotFoundException {
 
-        ConsoleUtilities console = new ConsoleUtilities();
-        // Saludo inicial
-        console.initConsole();
-        console.printIntro();
-        // consoleUtilities.printHline();
+                ConsoleUtilities console = new ConsoleUtilities();
 
-        // Menu
-        App app = new App();
+                console.initConsole();
 
-        // app.printMenu();
+                // Saludo inicial
+                console.printIntro();
+                // consoleUtilities.printHline();
 
-        // Acciones del menu
-        // -------------------------------------------------
-        // Importar
-        // Exportar
-        // Mostrar
-        // Agregar
-        // Eliminar
-        // Buscar
+                // Acciones del menu
+                // ---------------------------------------
+                // Importar
+                // Exportar
+                // Mostrar
+                // Agregar
+                // Eliminar
+                // Buscar
 
-        // Importar archivo con palabras
-        app.importarArchivo();
+                // Importar archivo con palabras
+                app.importarArchivo();
 
-        // Exportar arbol ordenado a una lista
-        app.exportarDiccionario();
+                // Exportar arbol ordenado a una lista
+                app.exportarDiccionario();
 
-        // Mostrar por pantalla
-        // app.mostrarPalabrasOrdenadas();
+                // Mostrar por pantalla
+                // app.mostrarPalabrasOrdenadas();
 
-        // Agregar palabras al diccionario desde la app
-        // app.agregarPalabras();
+                // Agregar palabras al diccionario desde la app
+                // app.agregarPalabras();
 
-        // app.eliminarPalabra();
+                // Eliminar palabra
+                // app.eliminarPalabra();
 
-        // app.buscarPalabra();
+                // Buscar palabra
+                // app.buscarPalabra();
 
+                // --------------------------------------
+                // MAYBE:
+                // Utilizar pilas y colas para reordenar
+                // diccionario alfabeticamente al derecho
+                // y al reves.
 
-        // -------------------------------------------------
-        // MAYBE:
-        // Utilizar pilas y colas para reordenar
-        // diccionario alfabeticamente al derecho
-        // y al reves.
+                // DEBUG:
+                // Mostrar las palabras tal como se insertaron
+                // System.out.println("Palabras DESordenadas");
+                // app.mostrarPalabras();
+                // consoleUtilities.printHline();
 
-        // DEBUG:
-        // Mostrar las palabras tal como se insertaron
-        // System.out.println("Palabras DESordenadas");
-        // app.mostrarPalabras();
-        // consoleUtilities.printHline();
+        }
 
-    }
 
 }
