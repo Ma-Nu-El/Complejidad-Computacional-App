@@ -19,7 +19,7 @@ public class Controller {
                 console.printIntro();
                 // consoleUtilities.printHline();
 
-                // Acciones del menu
+                // ACCIONES DEL MENU
                 // ---------------------------------------
                 // Importar
                 // Exportar
@@ -47,16 +47,14 @@ public class Controller {
                 // app.buscarPalabra();
 
                 // --------------------------------------
-                // MAYBE:
-                // Utilizar pilas y colas para reordenar
-                // diccionario alfabeticamente al derecho
-                // y al reves.
 
                 // DEBUG:
+                // --------------------------------------
                 // Mostrar las palabras tal como se insertaron
                 // System.out.println("Palabras DESordenadas");
                 // app.mostrarPalabras();
                 // consoleUtilities.printHline();
+                // --------------------------------------
 
         }
 
