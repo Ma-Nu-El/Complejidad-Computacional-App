@@ -47,19 +47,44 @@ public class View extends JFrame {
 
     }
 
-    // Listener para boton 'Importar'
-    public void addImportListener(ActionListener listenForCalcButton) {
 
-        importButton.addActionListener(listenForCalcButton);
+    // LISTENERS
+
+    // Listener para boton 'Importar'
+    public void addImportListener(ActionListener listenForImportButton) {
+
+        importButton.addActionListener(listenForImportButton);
 
     }
 
     // Listener para boton 'Exportar'
-    public void addExportListener(ActionListener listenForCalcButton) {
+    public void addExportListener(ActionListener listenForExportButton) {
 
-        exportButton.addActionListener(listenForCalcButton);
+        exportButton.addActionListener(listenForExportButton);
 
     }
+
+    // Listener para boton 'Mostrar'
+    public void addDisplayListener(ActionListener listenForDisplayButton){
+        displayButton.addActionListener(listenForDisplayButton);
+    }
+
+    // Listener para boton 'Agregar'
+    public void addAddListener(ActionListener listenForAddButton){
+        addButton.addActionListener(listenForAddButton);
+
+    }
+
+    // Listener para boton 'Borrar'
+    public void addDeleteListener(ActionListener listenForDeleteButton){
+        deleteButton.addActionListener(listenForDeleteButton);
+    }
+
+    // Listener para boton 'Buscar'
+    public void addSearchListener(ActionListener listenForSearchButton){
+        searchButton.addActionListener(listenForSearchButton);
+    }
+
 
     // Open a popup that contains the error message passed
 

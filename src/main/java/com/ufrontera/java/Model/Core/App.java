@@ -51,7 +51,8 @@ public class App {
         }
 
         public void mostrarPalabras() {
-                listaDePalabras.printLista();
+                // listaDePalabras.printLista();
+                palabras.mostrar();
         }
 
         public void mostrarPalabrasOrdenadas() {

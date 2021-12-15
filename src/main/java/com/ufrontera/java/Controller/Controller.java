@@ -75,6 +75,10 @@ public class Controller {
                 // ACCIONES DEL MENU
                 vista.addImportListener(new ImportListener());
                 vista.addExportListener(new ExportListener());
+                vista.addDisplayListener(new DisplayListener());
+                vista.addAddListener(new AddListener());
+                vista.addDeleteListener(new DeleteListener());
+                vista.addSearchListener(new SearchListener());
 
         }
 
@@ -100,6 +104,44 @@ public class Controller {
                         System.out.println("Archivo exportado.");
                 }
 
+        }
+
+        class DisplayListener implements ActionListener{
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                    app.mostrarPalabras();
+            }
+        }
+
+        class AddListener implements ActionListener {
+
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+
+                        // app.agregarPalabras();
+                        System.out.println("Demo: agregar palabra.");
+
+                }
+        }
+
+        class DeleteListener implements ActionListener {
+
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+
+                        // app.eliminarPalabra();
+                        System.out.println("Demo: eliminar palabra.");
+                }
+        }
+
+        class SearchListener implements ActionListener{
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                    // app.buscarPalabra();
+                    System.out.println("Demo: buscar palabra.");
+            }
         }
 
 }
