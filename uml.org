@@ -159,10 +159,17 @@ package "View"  {
 }
 
 'Relations'
-Main::startCLI -- Controller::startCLI
-Main::startGUI -- Controller::startGUI
+Main -- Controller
 
-Model -- Controller
+App -- Controller
+App -- Tree
+App -- ListaDePalabras
+App -- Diccionario
+App -- ConsoleMenu
+ConsoleMenu -- ConsoleUtilities
+Diccionario -- ListaDePalabras
+Tree -- Node
+Node -- Palabra
 View -- Controller
 #+end_src
 

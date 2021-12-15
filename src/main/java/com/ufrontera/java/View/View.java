@@ -38,7 +38,7 @@ public class View extends JFrame {
         panel.add(addButton);
         panel.add(searchButton);
         panel.add(deleteButton);
-        panel.add(closeButton);
+        // panel.add(closeButton);
 
     }
 
