@@ -1,0 +1,48 @@
+#+TITLE: UML Diccionario
+
+* MVC Example
+:PROPERTIES:
+:header-args: :dir ./ :file-ext jpg :results link
+:END:
+
+# :header-args: :dir ~/myDrive/Attachments/2021/plantuml-mvc-example/png :file-ext png :results link
+# :header-args: :dir ~/myDrive/Attachments/2021/plantuml-mvc-example/svg :file-ext svg :results link
+
+#+name: UML
+#+begin_src plantuml
+left to right direction
+
+'Model'
+package "Model" {
+        class Model {
+        }
+        Model -- Controller
+}
+
+'Controller'
+package "Controller"  {
+        class Controller {
+                + {field} View: view
+                + {field} Model: model
+                + {method} someMethod: void
+        }
+
+        class Main {
+                + {field} Controller: Controller
+                + {method} start: void
+        }
+        Main::start <|-- Controller::someMethod
+}
+
+'View'
+package "View"  {
+        class View {
+        }
+        View -- Controller
+}
+#+end_src
+
+#+RESULTS: UML
+[[file:UML.jpg]]
+
+#+RESULTS: MVC
