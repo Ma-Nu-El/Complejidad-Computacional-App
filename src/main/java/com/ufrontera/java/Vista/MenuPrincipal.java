@@ -5,6 +5,7 @@
 package com.ufrontera.java.Vista;
 
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -99,14 +100,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {
+    //GEN-FIRST:event_SalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+
+    public void init() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -154,4 +157,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Salir.setContentAreaFilled(false);
 
     }
+
+    // LISTENERS
+    // Importar
+    public void ImportButton(ActionListener listenForImportButton ){
+        Importar.addActionListener(listenForImportButton);
+    }
+
+    // Exportar
+    public void ExportButton(ActionListener listenForExportButton ){
+        Exportar.addActionListener(listenForExportButton);
+    }
+
+    // Mostrar
+    public void DisplayButton(ActionListener listenForDisplayButton ){
+        Mostrar.addActionListener(listenForDisplayButton);
+    }
+
+    // Agregar
+    public void AddButton(ActionListener listenForAddButton ){
+        Agregar.addActionListener(listenForAddButton);
+    }
+
+    // Eliminar
+    public void DeleteButton(ActionListener listenForDeleteButton ){
+        Eliminar.addActionListener(listenForDeleteButton);
+    }
+
+    // Buscar
+    public void SearchButton(ActionListener listenForSearchButton ){
+        Buscar.addActionListener(listenForSearchButton);
+    }
+
 }

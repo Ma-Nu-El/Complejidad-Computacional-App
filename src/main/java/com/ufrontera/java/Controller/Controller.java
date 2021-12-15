@@ -3,17 +3,21 @@ package com.ufrontera.java.Controller;
 import java.io.FileNotFoundException;
 
 import com.ufrontera.java.Model.ConsoleUtilities.*;
-import com.ufrontera.java.Model.Core.*;
+import com.ufrontera.java.Model.Core.App;
+import com.ufrontera.java.Vista.MenuPrincipal;
 
 public class Controller {
 
-        public App app = new App();
+        // Crear el nucleo.
+        private App app = new App();
 
-        public void start() throws FileNotFoundException {
+        public void startCLI() throws FileNotFoundException {
 
+                // Crear CLI
                 ConsoleUtilities console = new ConsoleUtilities();
 
-                console.initConsole();
+                // Inicializar CLI
+                console.init();
 
                 // Saludo inicial
                 console.printIntro();
@@ -27,6 +31,8 @@ public class Controller {
                 // Agregar
                 // Eliminar
                 // Buscar
+
+                // Descomentar las que se quieren ejecutar.
 
                 // Importar archivo con palabras
                 app.importarArchivo();
@@ -58,5 +64,13 @@ public class Controller {
 
         }
 
+        public void startGUI() throws FileNotFoundException{
+
+                // Crear GUI
+                MenuPrincipal vista = new MenuPrincipal();
+                // Inicializar GUI
+                vista.init();
+
+        }
 
 }

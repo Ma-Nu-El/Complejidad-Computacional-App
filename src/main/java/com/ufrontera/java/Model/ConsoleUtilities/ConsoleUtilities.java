@@ -82,7 +82,7 @@ public class ConsoleUtilities {
 
     }
 
-    public void initConsole(){
+    public void init(){
         createTab();
     }
 }
