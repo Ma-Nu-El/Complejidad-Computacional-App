@@ -17,8 +17,20 @@ public class View extends JFrame{
 	private JTextField secondNumber = new JTextField(10);
 	private JButton calculateButton = new JButton("Calculate");
 	private JTextField calcSolution = new JTextField(10);
+    // Importar
+    // Exportar
+    // Mostrar
+    // Agregar
+    // Eliminar
+    // Buscar
+	private JButton importButton = new JButton("Importar");
+	private JButton exportButton = new JButton("Exportar");
+	private JButton displayButton = new JButton("Mostrar");
+	private JButton addButton = new JButton("Agregar");
+	private JButton deleteButton = new JButton("Borrar");
+	private JButton searchButton = new JButton("Buscar");
 
-	public View(){
+    public View(){
 
 		// Sets up the view and adds the components
 
@@ -32,6 +44,14 @@ public class View extends JFrame{
 		calcPanel.add(secondNumber);
 		calcPanel.add(calculateButton);
 		calcPanel.add(calcSolution);
+
+
+		calcPanel.add(importButton);
+		calcPanel.add(exportButton);
+		calcPanel.add(displayButton);
+		calcPanel.add(addButton);
+		calcPanel.add(deleteButton);
+		calcPanel.add(searchButton);
 
 		this.add(calcPanel);
 
@@ -66,11 +86,21 @@ public class View extends JFrame{
 	// If the calculateButton is clicked execute a method
 	// in the Controller named actionPerformed
 
-	public void addCalculateListener(ActionListener listenForCalcButton){
+    // Listener para boton 'Importar'
+	public void addImportListener(ActionListener listenForCalcButton){
 
-		calculateButton.addActionListener(listenForCalcButton);
+		importButton.addActionListener(listenForCalcButton);
 
 	}
+
+
+    // Listener para boton 'Exportar'
+	public void addExportListener(ActionListener listenForCalcButton){
+
+		exportButton.addActionListener(listenForCalcButton);
+
+	}
+
 
 	// Open a popup that contains the error message passed
 

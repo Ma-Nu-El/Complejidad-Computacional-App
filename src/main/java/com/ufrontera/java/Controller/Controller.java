@@ -1,10 +1,12 @@
 package com.ufrontera.java.Controller;
 
 import java.io.FileNotFoundException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import com.ufrontera.java.Model.ConsoleUtilities.*;
 import com.ufrontera.java.Model.Core.App;
-import com.ufrontera.java.Vista.MenuPrincipal;
+import com.ufrontera.java.View.View;
 
 public class Controller {
 
@@ -67,9 +69,36 @@ public class Controller {
         public void startGUI() throws FileNotFoundException{
 
                 // Crear GUI
-                MenuPrincipal vista = new MenuPrincipal();
-                // Inicializar GUI
-                vista.init();
+                View vista = new View();
+                vista.setVisible(true);
+
+                // ACCIONES DEL MENU
+                vista.addImportListener(new ImportListener());
+                vista.addExportListener(new ExportListener());
+
+        }
+
+        class ImportListener implements ActionListener{
+
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+                        try {
+                                app.importarArchivo();
+                                System.out.println("Archivo importado.");
+                        } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                        }
+                }
+
+        }
+
+        class ExportListener implements ActionListener{
+
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+                        app.exportarDiccionario();
+                        System.out.println("Archivo exportado.");
+                }
 
         }
 
