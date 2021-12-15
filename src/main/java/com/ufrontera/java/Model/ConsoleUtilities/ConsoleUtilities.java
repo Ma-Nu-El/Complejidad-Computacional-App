@@ -74,6 +74,7 @@ public class ConsoleUtilities {
         System.out.println(getSubTitleIndent()+ projectMessage);
         printHline();
     }
+
     public void printMenu(){
         ConsoleMenu menu = new ConsoleMenu();
         int menuIndentation = 2;

@@ -1,4 +1,6 @@
 #+TITLE: UML Diccionario
+#+AUTHOR: [[mailto:manuel.fuica.morales@gmail.com][Manuel Fuica Morales]]
+#+DATE: December 2021
 
 * Arbol del proyecto
 :PROPERTIES:
@@ -45,18 +47,19 @@ left to right direction
 
 'Controller'
 package "Controller"  {
-        class Controller {
-                + {field} View: view
-                + {field} Model: model
-                + {method} startCLI: void
-                + {method} startGUI: void
-        }
 
         class Main {
-                + {field} Controller: Controller
-                + {method} Controller.startCLI: void
-                + {method} Controller.startGUI: void
+                + {field} controller: Controller
+                + {method} controller.startCLI(): void
+                + {method} controller.startGUI(): void
         }
+
+        class Controller {
+                - {field} App: app
+                + {method} startCLI(): void
+                + {method} startGUI(): void
+        }
+
 }
 
 'Model'
@@ -64,35 +67,94 @@ package "Model" {
 
         package "Core"{
                 class App {
+                        ~ {field} palabras: Tree
+                        ~ {field} listaDePalabras: ListaDePalabras
+                        ~ {field} diccionario: Diccionario
+                        ~ {field} menu: ConsoleMenu
+                        ~ {field} outputFile: File
+                        + {method} printMenu(): void
+                        + {method} agregarPalabras(): void
+                        + {method} mostrarPalabras(): void
+                        + {method} mostraraPalabrasOrdenadas(): void
+                        + {method} buscarPalabra(): void
+                        + {method} eliminarPalabra(): void
+                        + {method} exportarDiccionario(): void
+                        + {method} importarDiccionario(): void
                 }
                 class Diccionario {
+                        ~ {field} lista: ListaDePalabras
+                        ~ {field} diccionario: String[][]
+                        + {method} getDiccionario(): String
                 }
                 class ListaDePalabras {
+                        - {field} lista: String[][]
+                        + {method} printLista(): void
+                        + {method} getLista(): String[][]
                 }
                 class Node {
+                        + {field} palabra: Palabra
+                        + {field} hijoIzquierdo: Node
+                        + {field} hijoDerecho: Node
+                        + {method} setPalabra(): void
+                        + {method} getPalabra(): Palabra
                 }
                 class Palabra {
+                        - {field} nombre: String
+                        - {field} significado: String
+                        - {field} clasificacion: String
+                        + {method} mostrarNombre(): void
+                        + {method} mostrarSignificado(): void
+                        + {method} mostrarClasificacion(): void
+                        + {method} getNombre(): String
+                        + {method} getSignificado(): String
+                        + {method} getClasificacion(): String
                 }
                 class Tree {
+                        - {field} root: Node
+                        - {method} getSuccessor(delNode: Node): Node
+                        - {method} inOrder(node:Node): void
+                        - {method} inOrder(node:Node,ps:PrintStream): void
+                        + {method} find(nombre:String): Palabra
+                        + {method} agregar(nombre:String,significado:String,clasificacion:String): void
+                        + {method} eliminar(nombre:String): boolean
+                        + {method} mostrar(): void
+                        + {method} guardarDiccionario(ps:PrintStream): void
                 }
 
         }
         package "ConsoleUtilities"{
                 class ConsoleUtilities{
+                        + {method} printIntro(): void
+                        + {method} printMenu(): void
+                        + {method} init(): void
                 }
 
         }
         package "Menu"{
                 class ConsoleMenu{
+                        ~ {field} console: ConsoleUtilities
+                        + {method} displayAppOptions(): void
                 }
         }
-
 
 }
 
 'View'
 package "View"  {
         class View {
+                ~ {field} importButton: JButton
+                ~ {field} exportButton: JButton
+                ~ {field} displayButton: JButton
+                ~ {field} addButton: JButton
+                ~ {field} deleteButton: JButton
+                ~ {field} searchButton: JButton
+                + {method} addImportListener(listener: ActionListener): void
+                + {method} addExportListener(listener: ActionListener): void
+                + {method} addDisplayListener(listener: ActionListener): void
+                + {method} addAddListener(listener: ActionListener): void
+                + {method} addDeleteListener(listener: ActionListener): void
+                + {method} addSearchListener(listener: ActionListener): void
+
         }
 }
 

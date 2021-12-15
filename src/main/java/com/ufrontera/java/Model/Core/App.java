@@ -73,7 +73,6 @@ public class App {
                 System.out.println(palabra + " eliminada.");
         }
 
-
         // Guardar output de 'palabras.ordenar()' a
         // un 'diccionario.txt'
         public void exportarDiccionario() {

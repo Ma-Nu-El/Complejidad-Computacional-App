@@ -22,7 +22,7 @@ public class View extends JFrame {
     private JButton addButton = new JButton("Agregar");
     private JButton deleteButton = new JButton("Borrar");
     private JButton searchButton = new JButton("Buscar");
-    private JButton closeButton = new JButton("Cerrar");
+    // private JButton closeButton = new JButton("Cerrar");
 
     public View() {
 
