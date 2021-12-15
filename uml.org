@@ -1,12 +1,42 @@
 #+TITLE: UML Diccionario
 
-* MVC Example
+* Arbol del proyecto
+:PROPERTIES:
+:header-args:shell: :dir ./ :results output replace
+:END:
+
+#+begin_src shell
+tree src/main/java/com/ufrontera/java
+#+end_src
+
+#+RESULTS:
+#+begin_example
+src/main/java/com/ufrontera/java
+├── Controller
+│   ├── Controller.java
+│   └── Main.java
+├── Model
+│   ├── ConsoleUtilities
+│   │   └── ConsoleUtilities.java
+│   ├── Core
+│   │   ├── App.java
+│   │   ├── Diccionario.java
+│   │   ├── ListaDePalabras.java
+│   │   ├── Node.java
+│   │   ├── Palabra.java
+│   │   └── Tree.java
+│   └── Menu
+│       └── Menu.java
+└── View
+    └── View.java
+
+6 directories, 11 files
+#+end_example
+
+* UML
 :PROPERTIES:
 :header-args: :dir ./ :file-ext jpg :results link
 :END:
-
-# :header-args: :dir ~/myDrive/Attachments/2021/plantuml-mvc-example/png :file-ext png :results link
-# :header-args: :dir ~/myDrive/Attachments/2021/plantuml-mvc-example/svg :file-ext svg :results link
 
 #+name: UML
 #+begin_src plantuml

@@ -119,8 +119,8 @@ public class Controller {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
 
-                        // app.agregarPalabras();
-                        System.out.println("Demo: agregar palabra.");
+                        app.agregarPalabras();
+                        // System.out.println("Demo: agregar palabra.");
 
                 }
         }
