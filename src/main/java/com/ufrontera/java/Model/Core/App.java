@@ -3,7 +3,7 @@ package com.ufrontera.java.Model.Core;
 import java.io.*;
 
 import com.ufrontera.java.Model.ConsoleUtilities.ConsoleUtilities;
-import com.ufrontera.java.Model.Menu.Menu;
+import com.ufrontera.java.Model.Menu.ConsoleMenu;
 
 public class App {
 
@@ -23,7 +23,7 @@ public class App {
         File newFile = new File(outputFile);
 
         // Dependencias Menu
-        Menu menu = new Menu();
+        ConsoleMenu menu = new ConsoleMenu();
 
         // Acciones de la app
 

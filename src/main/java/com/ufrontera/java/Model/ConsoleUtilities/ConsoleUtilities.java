@@ -75,7 +75,7 @@ public class ConsoleUtilities {
         printHline();
     }
     public void printMenu(){
-        Menu menu = new Menu();
+        ConsoleMenu menu = new ConsoleMenu();
         int menuIndentation = 2;
 
         menu.displayMenu(getTab(menuIndentation));

@@ -26,7 +26,7 @@ src/main/java/com/ufrontera/java
 │   │   ├── Palabra.java
 │   │   └── Tree.java
 │   └── Menu
-│       └── Menu.java
+│       └── ConsoleMenu.java
 └── View
     └── View.java
 
@@ -42,34 +42,66 @@ src/main/java/com/ufrontera/java
 #+begin_src plantuml
 left to right direction
 
-'Model'
-package "Model" {
-        class Model {
-        }
-        Model -- Controller
-}
 
 'Controller'
 package "Controller"  {
         class Controller {
                 + {field} View: view
                 + {field} Model: model
-                + {method} someMethod: void
+                + {method} startCLI: void
+                + {method} startGUI: void
         }
 
         class Main {
                 + {field} Controller: Controller
-                + {method} start: void
+                + {method} Controller.startCLI: void
+                + {method} Controller.startGUI: void
         }
-        Main::start <|-- Controller::someMethod
+}
+
+'Model'
+package "Model" {
+
+        package "Core"{
+                class App {
+                }
+                class Diccionario {
+                }
+                class ListaDePalabras {
+                }
+                class Node {
+                }
+                class Palabra {
+                }
+                class Tree {
+                }
+
+        }
+        package "ConsoleUtilities"{
+                class ConsoleUtilities{
+                }
+
+        }
+        package "Menu"{
+                class ConsoleMenu{
+                }
+        }
+
+
 }
 
 'View'
 package "View"  {
         class View {
         }
-        View -- Controller
 }
+
+'Relations'
+Main::startCLI -- Controller::startCLI
+Main::startGUI -- Controller::startGUI
+
+Model -- Controller
+View -- Controller
 #+end_src
 
 #+RESULTS: UML
