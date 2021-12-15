@@ -29,19 +29,19 @@ public class View extends JFrame {
 
         // Sets up the view and adds the components
 
-        JPanel calcPanel = new JPanel();
+        JPanel appPanel = new JPanel();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600, 200);
+        this.setSize(1000, 700);
 
-        calcPanel.add(importButton);
-        calcPanel.add(exportButton);
-        calcPanel.add(displayButton);
-        calcPanel.add(addButton);
-        calcPanel.add(deleteButton);
-        calcPanel.add(searchButton);
+        appPanel.add(importButton);
+        appPanel.add(exportButton);
+        appPanel.add(displayButton);
+        appPanel.add(addButton);
+        appPanel.add(deleteButton);
+        appPanel.add(searchButton);
 
-        this.add(calcPanel);
+        this.add(appPanel);
 
         // End of setting up the components --------
 
