@@ -61,14 +61,16 @@ public class App {
         }
 
         public void buscarPalabra() {
-                String palabraBuscada = "Saltar";
-                System.out.println("-Palabra buscada: " + palabraBuscada);
-                palabras.find(palabraBuscada).mostrarNombre();
+                String palabraBuscada = "Jugar";
+                System.out.println("Palabra buscada: " + palabraBuscada);
+                System.out.println(palabras.find(palabraBuscada).getNombre());
+                System.out.println(palabras.find(palabraBuscada).getSignificado());
+                System.out.println(palabras.find(palabraBuscada).getClasificacion());
         }
 
         public void eliminarPalabra() {
                 String palabra = "Saltar";
-                System.out.println("Eliminando:" + palabra);
+                System.out.println("Eliminando: " + palabra);
                 palabras.eliminar(palabra);
                 System.out.println(palabra + " eliminada.");
         }

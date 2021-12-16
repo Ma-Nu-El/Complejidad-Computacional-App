@@ -37,10 +37,10 @@ public class Controller {
                 // Descomentar las que se quieren ejecutar.
 
                 // Importar archivo con palabras
-                app.importarArchivo();
+                // app.importarArchivo();
 
                 // Exportar arbol ordenado a una lista
-                app.exportarDiccionario();
+                // app.exportarDiccionario();
 
                 // Mostrar por pantalla
                 // app.mostrarPalabrasOrdenadas();
@@ -52,7 +52,7 @@ public class Controller {
                 // app.eliminarPalabra();
 
                 // Buscar palabra
-                // app.buscarPalabra();
+                app.buscarPalabra();
 
                 // --------------------------------------
 
@@ -130,8 +130,8 @@ public class Controller {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
 
-                        // app.eliminarPalabra();
-                        System.out.println("Demo: eliminar palabra.");
+                        app.eliminarPalabra();
+                        // System.out.println("Demo: eliminar palabra.");
                 }
         }
 
@@ -139,8 +139,8 @@ public class Controller {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                    // app.buscarPalabra();
-                    System.out.println("Demo: buscar palabra.");
+                    app.buscarPalabra();
+                    // System.out.println("Demo: buscar palabra.");
             }
         }
 
